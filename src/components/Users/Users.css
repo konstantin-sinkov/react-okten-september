@@ -1,0 +1,12 @@
+h2 {
+   text-align: center;
+   font-weight: bold;
+}
+
+.users_block > ul {
+    list-style-type: none;
+}
+
+.users_block > ul > li {
+    margin-top: 15px;
+}

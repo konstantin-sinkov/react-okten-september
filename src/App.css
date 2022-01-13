@@ -1,1 +1,47 @@
+* {
+    /*margin: 0;*/
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lucida Sans" , sans-serif;
+    color: #323d3b;
+}
+
+body {
+    background-color: azure;
+}
+
+.wrapper {
+    display: grid;
+    gap: 10px;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        'users posts'
+        'comments comments';
+}
+
+.border {
+    border: 1px solid darkslategray;
+    border-radius: 5px;
+}
+
+.users_block {
+    grid-area: users;
+    background-color: lightblue;
+}
+
+.posts_block {
+    grid-area: posts;
+    background-color: lightgreen;
+
+}
+
+.comments_block {
+    grid-area: comments;
+    background-color: lightgrey;
+}
+
+.users_block, .posts_block, .comments_block {
+    padding: 20px;
+}
 
