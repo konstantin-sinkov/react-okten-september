@@ -1,18 +1,19 @@
 import React from 'react';
 import User from "../User/User";
 
-const Users = () => {
-    const [users, setUsers] =
+const Users = ({users}) => {
     
     return (
         <div>
             <h2>Users list</h2>
-            {users.map(user =>
-                <User
-                    key={user.id}
-                    user={user}
-                />
-            )}
+            <ul>
+                {users.map(user =>
+                    <User
+                        key={user.id}
+                        user={user}
+                    />
+                )}
+            </ul>
         </div>
     );
 }
