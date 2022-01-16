@@ -1,12 +1,18 @@
 import React from 'react';
 
-const User = ({user}) => {
+import './User.css';
+
+const User = ({user, chooseUserId}) => {
     const {id, name, email} = user;
     
+    const userOnclickChoose = () => {
+        chooseUserId(id);
+    }
+    
     return (
-        <div>
+        <div className={"user_box"}>
             <p>{id} - {name} -- {email}</p>
-            <button>Detail Info</button>
+            <button onClick={userOnclickChoose}>Detail Info</button>
         </div>
     );
 }

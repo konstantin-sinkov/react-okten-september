@@ -1,1 +1,38 @@
+.wrapper {
+    display: grid;
+    gap: 10px;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        'users details'
+        'posts posts';
+}
+
+.users_wrap {
+    grid-area: users;
+    background-color: lightblue;
+}
+
+.hidden {
+    display: none;
+}
+
+.details_wrap {
+    grid-area: details;
+    background-color: lightgrey;
+}
+
+.posts_wrap {
+    grid-area: posts;
+    background-color: lightgreen;
+}
+
+.posts_wrap, .details_wrap, .users_wrap {
+    padding: 10px;
+}
+
+.border {
+    border: 1px solid darkslategray;
+    border-radius: 5px;
+}
 

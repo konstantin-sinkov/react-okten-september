@@ -1,0 +1,11 @@
+.user_box {
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.user_box button {
+    display: block;
+}
+
