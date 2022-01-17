@@ -12,10 +12,10 @@ function App() {
     useEffect(() => {
         usersService.getUsers()
             .then(value => {
-                setUsers([...value])
-                setFilteredUsers([...value])
+                setUsers([...value]);
+                setFilteredUsers([...value]);
             });
-    });
+    }, []);
     
     //filtration function
     const getFilter = (data) => {
