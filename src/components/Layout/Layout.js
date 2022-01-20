@@ -1,7 +1,7 @@
 import React from 'react';
 
 import css from "./Layout.module.css";
-import {Link, NavLink, Outlet} from "react-router-dom";
+import {NavLink, Outlet} from "react-router-dom";
 
 const Layout = () => {
     //<Outlet/> shows position of content relative to header>
