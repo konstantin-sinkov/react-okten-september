@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 
 import {usersService} from "../../services/users.service";
 import UserPost from "../../components/UserPost/UserPost";
+import css from './UserPostsPage.module.css';
 
 const UserPostsPage = () => {
     const {id} = useParams();
@@ -16,7 +17,7 @@ const UserPostsPage = () => {
     // console.log(userPosts);
     
     return (
-        <div>
+        <div className={css.posts_block}>
             <h2><u>User posts</u></h2>
             {userPosts.length > 0 &&
                 userPosts.map(post => <UserPost key={post.id} post={post}/>)}

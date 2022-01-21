@@ -5,10 +5,11 @@ import Layout from "./components/Layout/Layout";
 import {UsersPage, PostsPage,
         UserDetailsPage, UserPostsPage,
         PostDetailsPage, PostCommentsPage} from './pages';
+import css from './App.module.css'
 
 function App() {
     return (
-        <>
+        <div className={css}>
             <Routes>
                 <Route path={'/'} element={<Layout/>}>
                     <Route path={'users'} element={<UsersPage/>}>
@@ -23,7 +24,7 @@ function App() {
                     </Route>
                 </Route>
             </Routes>
-        </>
+        </div>
     );
 }
 

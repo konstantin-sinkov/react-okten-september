@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
+
 import {postsService} from "../../services/posts.service";
-import UserPost from "../../components/UserPost/UserPost";
 import Comment from "../../components/Comment/Comment";
+import css from './PostCommentsPage.module.css';
 
 const PostCommentsPage = () => {
     const {id} = useParams();
@@ -13,7 +14,7 @@ const PostCommentsPage = () => {
     }, [id]);
     
     return (
-        <div>
+        <div className={css.comments_block}>
             <h2><u>Post's thread</u></h2>
             {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
         </div>
