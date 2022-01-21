@@ -24,8 +24,7 @@ const UserDetailsPage = () => {
         navigator('posts');
     }
     
-    
-    console.log(user);
+    // console.log(user);
     return (
         <div>
             {user && (
@@ -46,4 +45,4 @@ const UserDetailsPage = () => {
     );
 }
 
-export default UserDetailsPage;
+export {UserDetailsPage};

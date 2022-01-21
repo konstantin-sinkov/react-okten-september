@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {usersService} from "../../services/users.service";
-import User from "../../components/User/User";
 import {Outlet} from "react-router-dom";
+
+import User from "../../components/User/User";
+import css from './UsersPage.module.css';
 
 const UsersPage = () => {
     const [users, setUsers] = useState([]);
@@ -12,14 +14,17 @@ const UsersPage = () => {
     
     
     return (
-        <div>
-            <h1><u>Users List</u></h1>
-            {users.map(user => <User key={user.id} user={user}/>)}
+        <div className={css.wrapper}>
             <div>
-                <Outlet />
+                <h1><u>Users List</u></h1>
+                {users.map(user => <User key={user.id} user={user}/>)}
+            </div>
+            <div>
+                <Outlet/>
             </div>
         </div>
     );
 }
 
-export default UsersPage;
+//default export doesn't work with index.js exports
+export {UsersPage};
