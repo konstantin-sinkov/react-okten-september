@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.nav_right {
+
+}
+
+.nav_right a {
+    font-size: 1.2em;
+    display: block;
+    width: 150px;
+    margin-bottom: 30px;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: burlywood;
+    color: #1c1b1b;
+}
