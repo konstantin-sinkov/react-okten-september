@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 
@@ -7,11 +7,19 @@ import {carsService} from "../../services/cars.service";
 import {carValidator} from "../../validators/car.validator";
 
 
-const Form = ({update}) => {
+const Form = ({update, carForUpdate: {id, model, price, year}}) => {
     const {
-        register, handleSubmit, watch, formState: {errors}
+        register, handleSubmit, watch, formState: {errors}, setValue
     } = useForm({resolver: joiResolver(carValidator), mode: "onTouched"}); //pass resolver to useForm for validation data to submit
                                             // 2nd param mode - is used for displaying errorMessage out of focus
+                                            // setValue - allows to set value of registered field dynamically
+    
+    // set each form's field with carForUpdate params
+    useEffect(() => {
+        setValue('model', model);
+        setValue('price', price);
+        setValue('year', year);
+    },[id])
     
     //creating obj. with errors data
     const [formError, setFormError] = useState({});
@@ -24,22 +32,25 @@ const Form = ({update}) => {
     //     })
     // }
     
-    
     //submit f-n with async/await
     const submit = async (car) => {
         try {
-            const newCar = await carsService.createCar(car);
+            let newCar;
+            
+            if (id) {
+                newCar = await carsService.updateCarById(id, car);
+            } else {
+                newCar = await carsService.createCar(car);
+            }
             
             update(newCar); //newCar transfer to App.js and pass to CarList for updating
-            
         } catch (error) {
             setFormError(error.response.data);
         }
     }
     
-    
     //watch - f-n for watching changes in inputs
-    watch(event => console.log(event))
+    // watch(event => console.log(event))
     
     return (
         <div>
@@ -65,7 +76,7 @@ const Form = ({update}) => {
                 {errors.year && <span>{errors.year.message}</span>}
                 
                 <div>
-                    <button>Save</button>
+                    <button>{id ? 'Update car' : 'Save car'}</button>
                 </div>
             </form>
         </div>
