@@ -1,0 +1,14 @@
+.car_input_item {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    width: 300px;
+    text-align: center;
+}
+
+.car_input_item > label {
+    /*text-align: right;*/
+}
+
+span {
+    color: red;
+}
