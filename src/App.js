@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Route, Routes} from "react-router-dom";
 
 import './App.css';
@@ -7,15 +7,21 @@ import {CatPage, CarPage, DogPage, GirlPage, NotebookPage} from './pages';
 
 
 function App() {
+    const [trigger, setTrigger] = useState(null);
+    
+    const update = (data) => {
+        setTrigger(data);
+    }
+    
     return (
         <div className="App">
             <Routes>
                 <Route path={'/'} element={<Layout/>}>
-                    <Route path={'cat'} element={<CatPage/>} />
-                    <Route path={'car'} element={<CarPage/>} />
-                    <Route path={'dog'} element={<DogPage/>} />
-                    <Route path={'girl'} element={<GirlPage/>} />
-                    <Route path={'note'} element={<NotebookPage/>} />
+                    <Route path={'cat'} element={<CatPage trigger={trigger} update={update}/>} />
+                    <Route path={'car'} element={<CarPage trigger={trigger} update={update}/>} />
+                    <Route path={'dog'} element={<DogPage trigger={trigger} update={update}/>} />
+                    <Route path={'girl'} element={<GirlPage trigger={trigger} update={update}/>} />
+                    <Route path={'note'} element={<NotebookPage trigger={trigger} update={update}/>} />
                 </Route>
             </Routes>
         </div>

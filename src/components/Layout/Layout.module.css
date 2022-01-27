@@ -1,11 +1,7 @@
 .wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 50px;
-}
-
-.nav_right {
-
 }
 
 .nav_right a {
@@ -20,4 +16,9 @@
     border-radius: 2px;
     background-color: burlywood;
     color: #1c1b1b;
+}
+
+.nav_right a[class='active'] {
+    background-color: #dc9843;
+    box-shadow: 10px 5px 5px #3d2302;
 }

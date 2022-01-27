@@ -1,19 +1,17 @@
-import React, {useEffect, useState} from 'react';
-
+import React from 'react';
 import {UncachedImage} from "react-uncached-image";
 
-const ImageBlock = ({imageURL}) => {
+import css from './ImageBlock.module.css';
+
+const ImageBlock = ({imageURL, update}) => {
     // debugger;
-    const updateImage = () => {
-    
-    }
     
     return (
-        <div>
-            <button onClick={updateImage}>
+        <div className={css.image_wrap}>
+            <UncachedImage src={imageURL}/>
+            <button onClick={update}>
                 Update
             </button>
-            <UncachedImage src={imageURL}/>
         </div>
     );
 }
