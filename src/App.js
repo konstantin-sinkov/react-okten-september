@@ -10,7 +10,6 @@ function App() {
     const [trigger, setTrigger] = useState(null);
     
     const update = (data) => {
-        debugger;
         setTrigger(data);
     }
     
