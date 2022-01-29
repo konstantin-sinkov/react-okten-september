@@ -11,8 +11,8 @@ function App() {
     
     return (
         <div className={css.main_wrapper}>
-            <PetForm pet={cat} petsArray={state.cats}/>
-            <PetForm pet={dog} petsArray={state.dogs}/>
+            <PetForm pet={cat} petsArray={state.cats} dispatch={dispatch}/>
+            <PetForm pet={dog} petsArray={state.dogs} dispatch={dispatch}/>
         </div>
     );
 }
