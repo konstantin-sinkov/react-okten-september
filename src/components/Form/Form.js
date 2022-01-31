@@ -1,11 +1,18 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
+import {useDispatch} from "react-redux";
+import {addCar} from "../../store";
 
 const Form = ({getFormData}) => {
     const {register, handleSubmit, reset} = useForm();
+    //useDispatch() hook - for passing data to state
+    const dispatch = useDispatch();
     
     const submit = (data) => {
-        getFormData(data);
+        // getFormData(data);
+        
+        //Pass data like obj. to addCar and then get it in reducer as payload
+        dispatch(addCar({data}));
         //clear the form
         reset();
     }
