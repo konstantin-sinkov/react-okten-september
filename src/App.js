@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 
 import './App.css';
+import Form from "./components/Form/Form";
+import TodoList from "./components/TodoList/TodoList";
 
 function App() {
     return (
         <div>
-        
+            <Form />
+            <TodoList/>
         </div>
     );
 }
